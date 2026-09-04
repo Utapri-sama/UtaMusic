@@ -93,19 +93,24 @@
         
     }
     
-    #nowArt {
-        flex-shrink: 0;
-        width: 200px;
-        height: 200px;
-   transform: translateX(150px);
-        object-fit: cover;
-        background-image: url(https://static.wikitide.net/utanoprincesamawiki/f/fe/A8f175e0726af13383510d8b412a6583.jpg?20231029221627);
-        background-size:cover;
-        background-position: center;
-                border-radius: 12px;
-                background-color: gray;
-                z-index:99;
-    }
+ #nowArt {
+    position: relative;
+    left: 100px;
+
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+
+    background-image: url(https://static.wikitide.net/utanoprincesamawiki/f/fe/A8f175e0726af13383510d8b412a6583.jpg?20231029221627);
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 12px;
+    background-color: gray;
+    z-index: 99;
+}
                 .border-image {
     position: absolute;
     inset: 0;
@@ -213,8 +218,8 @@
 
 
 #queueBox .queue-buttons button {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     min-width: 40px;
     min-height: 40px;
     margin: 0;
@@ -391,7 +396,7 @@
 }
 
     .player-button {
-        width: 125px;
+        width: 200px;
         height: 125px;
         border-radius: 0%;
         background: #333;
@@ -399,6 +404,7 @@
         font-size: 40px;
         cursor: pointer;
         transition: 0.2s;
+         gap: 20px;
     }
 
     .player-button:hover {
@@ -573,6 +579,8 @@
     }
 
     .button-row {
+        width: 50% !important;
+    height: 45px !important;
         margin-top: auto;
         display: flex;
         flex-direction: column;
@@ -782,31 +790,31 @@ body {
 
     /* ---------- CHARACTERS ---------- */
 
-    #Reiji,
-    #Ai {
-        position: fixed;
+#Reiji,
+#Ai {
+    position: absolute;
 
-        top: auto;
-        bottom: 0;
+    top: auto;
+    bottom: 0;
 
-        width: 120px;
-        height: auto;
+    width: 120px;
+    height: auto;
 
-        transform: scale(1);
+    transform: scale(1);
 
-        z-index: 999;
-        pointer-events: none;
-    }
+    z-index: 999;
+    pointer-events: none;
+}
 
-    #Reiji {
-        left: -20px;
-        right: auto;
-    }
+#Reiji {
+    left: -20px;
+    right: auto;
+}
 
-    #Ai {
-        right: -20px;
-        left: auto;
-    }
+#Ai {
+    right: -20px;
+    left: auto;
+}
    
 
 
@@ -866,50 +874,49 @@ body {
 }
 
     /* ---------- SORT ---------- */
+.library-controls {
+    position: fixed;
 
-    .library-controls {
-        position: fixed;
+    left: 0;
+    bottom: 0;
 
-        bottom:0;
-        left: 0;
+    width: 100%;
+    height: auto;
 
-        width: 100%;
+    display: flex;
+    flex-direction: row;
 
-        display: flex;
-        flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-        justify-content: center;
-        align-items: center;
+    gap: 8px;
 
-        gap: 8px;
+    padding: 10px;
 
-        padding: 10px;
-        margin: 0;
+    margin: 0;
 
-        transform: none;
+    transform: none;
 
-        grid-column: 1 / -1;
+    z-index: 10000;
+}
 
-        order: 10;
-    }
+.library-controls label {
+    font-size: 16px;
+    margin: 0;
+}
 
-    .library-controls label {
-        font-size: 16px;
-        margin: 0;
-    }
+#sortSelect {
+    width: auto;
+    max-width: 55vw;
 
-    #sortSelect {
-        width: auto;
-        max-width: 55vw;
+    padding: 10px 16px;
 
-        padding: 10px 16px;
+    font-size: 15px;
+}
 
-        font-size: 15px;
-    }
-
-    #sortSelect:hover {
-        transform: none;
-    }
+#sortSelect:hover {
+    transform: none;
+}
 
 
     /* ---------- QUEUE ---------- */
@@ -963,11 +970,10 @@ body {
     }
 
     #queueBox .queue-buttons .clearqueue {
-        width: auto;
+     width: 200px;
+    height: 200px;
         min-width: 55px;
-
         padding: 0 10px;
-
         border-radius: 20px;
     }
 
