@@ -124,7 +124,7 @@
     }
 
     #progressBar {
-        width: 85%;
+        width: 70%;
          z-index:920;
         
     }
@@ -784,7 +784,7 @@ body {
 
     #Reiji,
     #Ai {
-        position: absolute;
+        position: fixed;
 
         top: auto;
         bottom: 0;
@@ -794,7 +794,7 @@ body {
 
         transform: scale(1);
 
-        z-index: 10;
+        z-index: 999;
         pointer-events: none;
     }
 
@@ -807,6 +807,7 @@ body {
         right: -20px;
         left: auto;
     }
+   
 
 
     /* ---------- BANNER ---------- */
@@ -829,49 +830,48 @@ body {
 
     /* ---------- PLAYER CONTROLS ---------- */
 
-    .controls {
-        width: 100%;
+.controls {
+    width: 100%;
 
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    grid-template-columns: repeat(5, auto);
 
-        align-items: center;
-        justify-items: center;
+    align-items: center;
+    justify-content: center;
 
-        gap: 5px;
+    gap: 2px;
 
-        padding: 10px 8px;
+    padding: 10px 4px;
 
-        overflow: hidden;
-    }
+    overflow: hidden;
+}
 
-    .player-button {
-        width: min(17vw, 65px);
-        height: min(17vw, 65px);
+.player-button {
+    width: min(14vw, 65px);
+    height: min(14vw, 65px);
 
-        min-width: 0;
-        min-height: 0;
+    min-width: 0;
+    min-height: 0;
 
-        margin: 0 !important;
-        padding: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
-        font-size: clamp(18px, 6vw, 30px);
+    font-size: clamp(18px, 5vw, 30px);
 
-        border-radius: 50%;
-    }
+    border-radius: 50%;
+}
 
-    .player-button:hover {
-        transform: none;
-    }
-
+.player-button:hover {
+    transform: none;
+}
 
     /* ---------- SORT ---------- */
 
     .library-controls {
-        position: relative;
+        position: fixed;
 
-        top: auto;
-        left: auto;
+        bottom:0;
+        left: 0;
 
         width: 100%;
 
@@ -953,8 +953,8 @@ body {
     }
 
     #queueBox .queue-buttons button {
-        width: 42px;
-        height: 42px;
+        width: 100px;
+        height: 100px;
 
         min-width: 42px;
         min-height: 42px;
@@ -1011,11 +1011,11 @@ body {
         bottom: 15px;
         left: auto;
 
-        width: 65px;
-        height: 65px;
+        width: 100px;
+        height: 100px;
 
-        min-width: 65px;
-        min-height: 65px;
+        min-width: 100px;
+        min-height: 100px;
 
         padding: 0;
 
@@ -1139,9 +1139,9 @@ body {
 
     .song-card button {
         width: 100%;
-        height: 40px;
+        height: 60px;
 
-        min-height: 40px;
+        min-height: 60px;
 
         padding: 6px;
 
@@ -1160,8 +1160,8 @@ body {
 
     .small-button-row button {
         width: 50% !important;
-        height: 36px !important;
-        min-height: 36px !important;
+        height: 50px !important;
+        min-height: 50px !important;
 
         padding: 5px !important;
 
