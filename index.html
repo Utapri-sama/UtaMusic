@@ -30,10 +30,14 @@
       /* =========================
        Reiji and Ai
     ========================= */  
+    
+    
+    
+    
         #Reiji {
    position: fixed;
     top: -5px;
-    Right: 70%;
+    Right: 73%;
     transform: translateX(-100px);
        transform: scale(0.3);
         z-index:999;
@@ -42,10 +46,27 @@
 #Ai {
     position: fixed;
     top: 0px;
-    left: 70%;
+    left: 73%;
     transform: translateX(-100px);
       transform: scale(0.3);
         z-index:999;
+}
+
+     #ReijiKey {
+   position: fixed;
+    top: 240px;
+    Right: 87%;
+    transform: translateX(-100px);
+       transform: scale(1.5);
+        z-index:999;
+    }
+    
+#AiKey {
+    position: fixed;
+      top: 240px;
+    left: 91%;
+    transform: translateX(-100px) scale(1.5) scaleX(-1);
+    z-index: 999;
 }
 
 
@@ -143,14 +164,11 @@
 #queueBox {
     position: fixed;
     right:0;
-    top: 420px;
+    bottom:10px;
     width: 750px;
     z-index: 9999;
-  background-color:black;
-            background-color: rgba(0, 0, 0, 1);
-    background-image:
+    background-image:   linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url("https://static.wikia.nocookie.net/shining-live/images/9/9a/Bg_Ai.png/revision/latest?cb=20190214231729");
-        
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -165,15 +183,7 @@
     overflow: hidden;
 }
 
-#queueBox::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: black;
-    opacity: 0.4;
-    z-index: 0;
-    pointer-events:none;
-}
+
 
 
 /* =========================
@@ -204,10 +214,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
-
+             
     /* DO NOT give this a huge width/height */
     width: auto;
     height: auto;
+    
 }
 
 
@@ -218,10 +229,10 @@
     min-height: 40px;
     margin: 0;
     padding: 0;
-    background: #333;
+     background-image:url(https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658);
     border: none;
     border-radius: 50%;
-    color: #ddd;
+    color: #1a1a1a;
     font-size: 16px;
     cursor: pointer;
     display: flex;
@@ -231,8 +242,10 @@
 
 
 #queueBox .queue-buttons button:hover {
-    background: #444;
-    color: white;
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658");
+
 }
 
 
@@ -261,7 +274,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #333;
+     background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658");
     padding: 0px 0px;
     border-radius: 8px;
     font-size: 20px;
@@ -270,11 +285,13 @@
         background 0.15s;
 }
 .queue-song:hover {
-    background: #333;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658");
 }
 .queue-song-name {
     height: 50px;
-    color: white;
+    color: black;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -315,7 +332,7 @@
 #queueBox.collapsed {
      position: fixed;
     right: 20px;
-      top: 420px;
+      bottom:10px;
     width: 200px;
     height: 200px;
     right: 20px;
@@ -384,7 +401,10 @@
     display: flex;
     align-items: flex-start;
     gap: 5px;
-    background: #1e1e1e;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://static.wikia.nocookie.net/shining-live/images/9/9a/Bg_Ai.png/revision/latest?cb=20190214231729");
+    background-size:cover;
     padding: 15px;
     z-index: 50;
 }
@@ -394,15 +414,17 @@
         height: 125px;
         border-radius: 0%;
         background: #333;
-        color: white;
+        color: #1a1a1a;
         font-size: 40px;
         cursor: pointer;
         transition: 0.2s;
     }
 
     .player-button:hover {
-        background: #555;
-        transform: scale(1.08);
+        background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658");
+
     }
 
     .player-button:active {
@@ -416,20 +438,21 @@
     }
 
      .controls button {
+         background-image:url(https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658);
         margin: 0px;
         padding: 1px 1px;
         border: none;
         border-radius: 500px;
         cursor: pointer;
     }
+    
 
     .small-shuffle-button {
-        width: 35px;
-        height: 35px;
+        width: 50px;
+        height: 50px;
         border: none;
         border-radius: 50%;
         background: #333;
-        color: white;
         font-size: 14px;
         cursor: pointer;
         transition: 0.2s;
@@ -440,9 +463,9 @@
     ========================= */
 
     .library-controls {
-    position: absolute;
+    position: fixed;
     left: 20px;
-    top: 180px;
+    bottom:0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -450,30 +473,41 @@
     padding: 0;
     margin: 0;
     transform: none;
-    
+    border-radius:69px;
+
 }
 
     .library-controls label {
+         font-size:50px;
         color: #1a1a1a;
         font-family: sans-serif;
-        font-size: 30px;
         font-weight: bold;
         margin-right: 8px;
     }
 
     #sortSelect {
+         font-size:30px !important; 
+         text-align: center;
+        height:200px;
+          width:200px;
         background: #1e1e1e;
-        color: white;
+        color: #1a1a1a;
         border: 0px solid #444;
-        border-radius: 50px;
-        padding: 30px 50px;
+        border-radius: 100px;
+        padding: 0px 0px;
         cursor: pointer;
        font-size: 20px;
+           background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658);
+
 }
     #sortSelect:hover {
-        background: #222;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658");
+
         transform: scale(1.08);
     }
+
 
     /* =========================
        CATEGORY SECTIONS
@@ -487,7 +521,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 24px;
+        font-size: 30px;
         margin: 20px;
         padding-bottom: 8px;
         border-bottom: 1px solid #333;
@@ -497,7 +531,7 @@
     }
 
     .album-title:hover {
-        color: #1d1d1d;
+        color: #1a1a1a;
     }
 
     .collapse-arrow {
@@ -576,6 +610,7 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        
     }
     
 .small-button-row {
@@ -586,16 +621,18 @@
 }
 
 .small-button-row button {
+    
     width: 50% !important;
     height: 60px !important;
     min-height: 60px !important;
     padding: 10px !important;
     margin: 0 !important;
-    font-size: 15px !important;
+    font-size: 20px !important;
     border-radius: 15px;
     box-sizing: border-box;
 }
     .song-card button {
+        background-image:url(https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658);
           font-size: 30px;
         width: 100%;
         height: 60px;
@@ -608,6 +645,9 @@
     }
   .song-card button:hover {
     transform: scale(1.05);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://static.wikia.nocookie.net/shining-live/images/8/89/Bg_Reiji.png/revision/latest/scale-to-width-down/1000?cb=20190214231658");
 }
 
 /* Mobile */
@@ -682,6 +722,12 @@ src=https://64.media.tumblr.com/6cc49e6fb942af76ba2ed14092203589/0425be15387614f
 id="Ai"
 src=https://64.media.tumblr.com/5d7e7aed8b2129b1fc00a1a2a743b850/0425be15387614f7-33/s400x600/62f493b7adb16d8fa32e2c5bd0e949d39b379501.pnj>
 
+<img id="AiKey"
+src=https://liveemotion.wiki.gg/images/thumb/Emotional_Key_%28Ai%29.png/120px-Emotional_Key_%28Ai%29.png?e2ae8c>
+
+<img id="ReijiKey"
+src=https://liveemotion.wiki.gg/images/thumb/Emotional_Key_%28Reiji%29.png/120px-Emotional_Key_%28Reiji%29.png?f8e8a7>
+
 <div id="banner"></div>
 
 
@@ -696,7 +742,7 @@ src=https://64.media.tumblr.com/5d7e7aed8b2129b1fc00a1a2a743b850/0425be15387614f
         <div class="library-controls">
 
     <label for="sortSelect">
-        Sort by:
+      
     </label>
 
 
@@ -3288,7 +3334,7 @@ function updateQueue() {
 
 
         empty.style.color =
-            "#666";
+            "#1a1a1a";
 
 
         empty.style.fontSize =
