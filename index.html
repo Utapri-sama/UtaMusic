@@ -212,8 +212,8 @@
     gap: 8px;
 
     /* DO NOT give this a huge width/height */
-    width: auto;
-    height: auto;
+    width: 150px;
+    height: 150px;
 }
 
 
@@ -618,12 +618,6 @@
     transform: scale(1.05);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    body {
-        zoom: 50%;
-    }
-}
 
 /* Desktop */
 @media (min-width: 769px) {
@@ -721,6 +715,7 @@ body {
     }
 
     #nowPlaying {
+            position: relative;
         width: 100%;
         min-height: 0;
         padding: 12px;
@@ -875,24 +870,23 @@ body {
 
     /* ---------- SORT ---------- */
 .library-controls {
-    position: fixed;
+    position: absolute;
 
-    left: 0;
-    bottom: 0;
+    top: 120px;
+    left: 10px;
 
-    width: 100%;
+    width: auto;
     height: auto;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    gap: 8px;
+    gap: 4px;
 
-    padding: 10px;
-
+    padding: 0;
     margin: 0;
 
     transform: none;
@@ -909,7 +903,7 @@ body {
     width: auto;
     max-width: 55vw;
 
-    padding: 10px 16px;
+    padding: 8px 12px;
 
     font-size: 15px;
 }
@@ -969,12 +963,17 @@ body {
         font-size: 14px;
     }
 
-    #queueBox .queue-buttons .clearqueue {
-     width: 200px;
-    height: 200px;
-        min-width: 55px;
-        padding: 0 10px;
-        border-radius: 20px;
+#queueBox .queue-buttons .clearqueue {
+    width: 65px;
+    height: 65px;
+
+    min-width: 65px;
+    min-height: 65px;
+
+    padding: 0;
+
+    border-radius: 50%;
+}
     }
 
     #queueList {
@@ -1040,15 +1039,15 @@ body {
         justify-content: center;
     }
 
-    #queueBox.collapsed #queueToggle {
-        width: 65px;
-        height: 65px;
+#queueBox.collapsed #queueToggle {
+    width: 65px;
+    height: 65px;
 
-        min-width: 65px;
-        min-height: 65px;
+    min-width: 65px;
+    min-height: 65px;
 
-        border-radius: 50%;
-    }
+    border-radius: 50%;
+}
 
 
     /* ---------- SONG LIBRARY ---------- */
@@ -1138,42 +1137,46 @@ body {
 
         line-height: 1.3;
     }
+.button-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
 
-    .button-row {
-        gap: 5px;
-    }
+.song-card button {
+    width: 95%;
+    height: 65px;
+    min-height: 65px;
 
-    .song-card button {
-        width: 100%;
-        height: 60px;
+    margin: 0 auto;
 
-        min-height: 60px;
+    padding: 8px;
 
-        padding: 6px;
+    font-size: 16px;
 
-        font-size: 14px;
+    border-radius: 14px;
+}
 
-        border-radius: 12px;
-    }
+.small-button-row {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+}
 
-    .song-card button:hover {
-        transform: none;
-    }
+.small-button-row button {
+    width: 50% !important;
+    height: 55px !important;
+    min-height: 55px !important;
 
-    .small-button-row {
-        gap: 5px;
-    }
+    margin: 0 !important;
+    padding: 5px !important;
 
-    .small-button-row button {
-        width: 50% !important;
-        height: 50px !important;
-        min-height: 50px !important;
-
-        padding: 5px !important;
-
-        font-size: 12px !important;
-    }
-
+    font-size: 14px !important;
+}
 
     /* ---------- SONG COUNTER ---------- */
 
@@ -1189,52 +1192,6 @@ body {
 }
 
 
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 400px) {
-
-    #nowArt {
-        width: 180px;
-        height: 180px;
-    }
-
-    .controls {
-        gap: 2px;
-        padding: 8px 4px;
-    }
-
-    .player-button {
-        width: 54px;
-        height: 54px;
-        font-size: 20px;
-    }
-
-    .song-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 7px;
-        padding: 6px;
-    }
-
-    .song-card {
-        padding: 6px;
-    }
-
-    .song-card h3 {
-        font-size: 14px;
-    }
-
-    .song-card p {
-        font-size: 11px;
-    }
-
-    .song-card button {
-        height: 36px;
-        min-height: 36px;
-        font-size: 12px;
-    }
-}
 
 </style>
 
