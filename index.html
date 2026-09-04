@@ -54,18 +54,18 @@
 
      #ReijiKey {
    position: fixed;
-    top: 240px;
-    Right: 87%;
+    top: 370px;
+    left:4%;
     transform: translateX(-100px);
-       transform: scale(1.5);
+       transform: scale(0.8);
         z-index:999;
     }
     
 #AiKey {
     position: fixed;
-      top: 240px;
-    left: 91%;
-    transform: translateX(-100px) scale(1.5) scaleX(-1);
+      top: 370px;
+   right: 0%;
+    transform: translateX(-100px) scale(0.8) scaleX(-1);
     z-index: 999;
 }
 
@@ -90,7 +90,8 @@
     
     
     .top-player {
-    min-height: 380px;
+  height: 380px;
+    overflow: hidden;
 }
 
   .sticky-player {
@@ -149,14 +150,19 @@
         
     }
 
-    #nowTitle {
-        font-size: 40px;
-        font-weight: bold;
-        color: black;
-        margin-bottom: 7px;
-         z-index:920;
-           
-    }
+  #nowTitle {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 7px;
+    z-index:99;
+}
+
+#artistName {
+    font-size: 22px;
+    font-weight: normal;
+    z-index:99;
+}
 /* =====================================================
    FLOATING QUEUE
 ===================================================== */
@@ -180,12 +186,18 @@
         height 0.25s ease,
         border-radius 0.25s ease,
         padding 0.25s ease;
-    overflow: hidden;
+    overflow: visible;
+    
 }
 
 
-
-
+#ReijiKey1 {
+    position: absolute;
+    top:-50px;
+    right: 680px;
+    z-index: 10000;
+    pointer-events: none;
+}
 /* =========================
    QUEUE HEADER
 ========================= */
@@ -342,6 +354,9 @@
     cursor: pointer;
 }
 
+#queueBox.collapsed #ReijiKey1 {
+    display:none;
+}
 
 /* Hide everything except toggle */
 
@@ -359,16 +374,14 @@
 
 #queueBox.collapsed .queue-header > span {
     display: none;
-    font-size:50px;
+    font-size:0px;
 }
-
 
 /* Hide Clear button */
 
 #queueBox.collapsed .clearqueue {
     display: none;
 }
-
 
 /* Make toggle into the circle */
 
@@ -394,6 +407,7 @@
     overflow: hidden;
     margin: 0;
 }
+
     .controls {
     position: relative;
     text-align: center;
@@ -702,12 +716,15 @@
                 id="Border"
                 src=""
                 alt=""
+                
             />
 
             <div class="now-info">
 
                 <div id="nowTitle">
                     Nothing Playing
+                      <span id="songName"></span>
+    <span id="artistName"></span>
                 </div>
 
                 <progress
@@ -820,6 +837,8 @@ src=https://liveemotion.wiki.gg/images/thumb/Emotional_Key_%28Reiji%29.png/120px
 
         <!-- QUEUE -->
 <div id="queueBox">
+<img id="ReijiKey1"
+src=https://liveemotion.wiki.gg/images/thumb/Emotional_Key_%28Reiji%29.png/120px-Emotional_Key_%28Reiji%29.png?f8e8a7>
 
     <div class="queue-header">
 
@@ -2430,7 +2449,6 @@ function createSongCards() {
 
 
 
-
 // =====================================================
 // CREATE INDIVIDUAL SONG CARD
 // =====================================================
@@ -2678,15 +2696,7 @@ container.appendChild(
 // =====================================================
 // PLAY SONG
 // =====================================================
-//
-// fromHistory = true means:
-//
-// "We're going to a song that already exists
-// in the history."
-//
-// This prevents Previous/Next from creating
-// duplicate history entries.
-//
+
 
 function playSong(
     index,
@@ -2764,12 +2774,11 @@ function playSong(
         song.art;
 
 
-    nowTitle.textContent =
-        song.title +
-        " — " +
-        getArtistName(
-            song
-        );
+document.getElementById("songName").textContent =
+    song.title;
+
+document.getElementById("artistName").textContent =
+    " — " + getArtistName(song);
 
 
     progressBar.value =
@@ -2852,19 +2861,6 @@ function togglePlay() {
 
 function nextSong() {
 
-    // =================================================
-    // FIRST:
-    // If we are currently somewhere in the history
-    // and there is a song after us, go forward in history.
-    //
-    // Example:
-    //
-    // A → B → C → D
-    //         ↑
-    //       Previous
-    //
-    // Press Next → D
-    // =================================================
 
     if (
         historyPosition >= 0 &&
@@ -2950,38 +2946,6 @@ function nextSong() {
     );
 
 }
-
-
-// =====================================================
-// PREVIOUS SONG
-// =====================================================
-//
-// IMPORTANT:
-//
-// This does NOT use:
-//
-// currentIndex - 1
-//
-// Instead, it uses the actual play history.
-//
-// Example:
-//
-// songs array:
-//
-// A, B, C, D
-//
-// Actual playback:
-//
-// A → C → D → B
-//
-// History:
-//
-// [A, C, D, B]
-//
-// Previous from B → D
-// Previous from D → C
-// Previous from C → A
-//
 
 function previousSong() {
 
@@ -3545,7 +3509,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const queueBox = document.getElementById("queueBox");
     const queueToggle = document.getElementById("queueToggle");
 
-    // Stop here if the queue elements don't exist
     if (!queueBox || !queueToggle) {
         return;
     }
