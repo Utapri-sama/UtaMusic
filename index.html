@@ -32,8 +32,8 @@
     ========================= */  
         #Reiji {
    position: fixed;
-    top: -2.5%;
-    Right: 80%;
+    top: -15px;
+    Right: 75%;
     transform: translateX(-100px);
        transform: scale(0.4);
         z-index:999;
@@ -41,8 +41,8 @@
     
 #Ai {
     position: fixed;
-  top: -2.2%;
-    left: 80%;
+    top: -10px;
+    left: 75%;
     transform: translateX(-100px);
       transform: scale(0.4);
         z-index:999;
@@ -93,24 +93,19 @@
         
     }
     
- #nowArt {
-    position: relative;
-    left: 100px;
-
-    flex-shrink: 0;
-    width: 250px;
-    height: 250px;
-
-    object-fit: cover;
-
-    background-image: url(https://static.wikitide.net/utanoprincesamawiki/f/fe/A8f175e0726af13383510d8b412a6583.jpg?20231029221627);
-    background-size: cover;
-    background-position: center;
-
-    border-radius: 12px;
-    background-color: gray;
-    z-index: 99;
-}
+    #nowArt {
+        flex-shrink: 0;
+        width: 200px;
+        height: 200px;
+   transform: translateX(150px);
+        object-fit: cover;
+        background-image: url(https://static.wikitide.net/utanoprincesamawiki/f/fe/A8f175e0726af13383510d8b412a6583.jpg?20231029221627);
+        background-size:cover;
+        background-position: center;
+                border-radius: 12px;
+                background-color: gray;
+                z-index:99;
+    }
                 .border-image {
     position: absolute;
     inset: 0;
@@ -129,7 +124,7 @@
     }
 
     #progressBar {
-        width: 70%;
+        width: 85%;
          z-index:920;
         
     }
@@ -149,7 +144,7 @@
 #queueBox {
     position: fixed;
     right: 20px;
-    top: 20.5%;
+    top: 420px;
     width: 750px;
     z-index: 9999;
   background-color:black;
@@ -212,14 +207,14 @@
     gap: 8px;
 
     /* DO NOT give this a huge width/height */
-    width: 150px;
-    height: 150px;
+    width: auto;
+    height: auto;
 }
 
 
 #queueBox .queue-buttons button {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     min-width: 40px;
     min-height: 40px;
     margin: 0;
@@ -396,7 +391,7 @@
 }
 
     .player-button {
-        width: 200px;
+        width: 125px;
         height: 125px;
         border-radius: 0%;
         background: #333;
@@ -404,7 +399,6 @@
         font-size: 40px;
         cursor: pointer;
         transition: 0.2s;
-         gap: 20px;
     }
 
     .player-button:hover {
@@ -447,9 +441,9 @@
     ========================= */
 
     .library-controls {
-    position: fixed;
+    position: absolute;
     left: 20px;
-    top: 20%;
+    top: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -579,8 +573,6 @@
     }
 
     .button-row {
-        width: 50% !important;
-    height: 45px !important;
         margin-top: auto;
         display: flex;
         flex-direction: column;
@@ -618,6 +610,12 @@
     transform: scale(1.05);
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        zoom: 50%;
+    }
+}
 
 /* Desktop */
 @media (min-width: 769px) {
@@ -625,573 +623,6 @@
         zoom: 55%;
     }
 }
-
-/* =====================================================
-   RESPONSIVE MOBILE LAYOUT
-===================================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media (min-width: 769px) {
-
-    #nowPlaying {
-        min-height: 200px;
-    }
-
-    #nowArt {
-        width: 200px;
-        height: 200px;
-        transform: translateX(0);
-    }
-
-    .now-info {
-        min-width: 0;
-    }
-
-    #nowTitle {
-        font-size: clamp(24px, 3vw, 40px);
-    }
-
-    .controls {
-        gap: 15px;
-    }
-
-    .player-button {
-        width: 90px;
-        height: 90px;
-        font-size: 30px;
-    }
-
-    .song-grid {
-        grid-template-columns: repeat(
-            auto-fit,
-            minmax(260px, 1fr)
-        );
-    }
-
-    .song-card {
-        width: 300px;
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-    body {
-        width: 100%;
-        min-width: 0;
-        overflow-x: hidden;
-    }
-
-    /* ---------- TOP PLAYER ---------- */
-
-    .top-player {
-        min-height: 0;
-    }
-
-    .sticky-player {
-        position: relative;
-        width: 100%;
-        top: auto;
-        left: auto;
-        right: auto;
-    }
-
-    #nowPlaying {
-            position: relative;
-        width: 100%;
-        min-height: 0;
-        padding: 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        overflow: hidden;
-    }
-
-    /* Album art */
-
-    #nowArt {
-        width: min(55vw, 220px);
-        height: min(55vw, 220px);
-
-        max-width: 220px;
-        max-height: 220px;
-
-        transform: none;
-        margin: 0 auto;
-
-        object-fit: cover;
-    }
-
-    /* Border image */
-
-    #Border {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Now playing information */
-
-    .now-info {
-        width: 100%;
-        min-width: 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        gap: 8px;
-    }
-
-    #nowTitle {
-        width: 100%;
-
-        font-size: clamp(20px, 6vw, 32px);
-        line-height: 1.15;
-
-        text-align: center;
-
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-
-        margin: 0;
-    }
-
-    #progressBar {
-        width: 90%;
-        max-width: 500px;
-    }
-
-
-    /* ---------- CHARACTERS ---------- */
-
-#Reiji,
-#Ai {
-    position: absolute;
-
-    top: auto;
-    bottom: 0;
-
-    width: 120px;
-    height: auto;
-
-    transform: scale(1);
-
-    z-index: 999;
-    pointer-events: none;
-}
-
-#Reiji {
-    left: -20px;
-    right: auto;
-}
-
-#Ai {
-    right: -20px;
-    left: auto;
-}
-   
-
-
-    /* ---------- BANNER ---------- */
-
-    #banner {
-        position: absolute;
-
-        top: 0;
-        left: 0;
-        right: 0;
-
-        width: 100%;
-        height: 100px;
-
-        background-size: auto 100px;
-        background-position: center;
-        pointer-events: none;
-    }
-
-
-    /* ---------- PLAYER CONTROLS ---------- */
-
-.controls {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 2px;
-
-    padding: 10px 4px;
-
-    overflow: hidden;
-}
-
-.player-button {
-    width: min(14vw, 65px);
-    height: min(14vw, 65px);
-
-    min-width: 0;
-    min-height: 0;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: clamp(18px, 5vw, 30px);
-
-    border-radius: 50%;
-}
-
-.player-button:hover {
-    transform: none;
-}
-
-    /* ---------- SORT ---------- */
-.library-controls {
-    position: absolute;
-
-    top: 120px;
-    left: 10px;
-
-    width: auto;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    gap: 4px;
-
-    padding: 0;
-    margin: 0;
-
-    transform: none;
-
-    z-index: 10000;
-}
-
-.library-controls label {
-    font-size: 16px;
-    margin: 0;
-}
-
-#sortSelect {
-    width: auto;
-    max-width: 55vw;
-
-    padding: 8px 12px;
-
-    font-size: 15px;
-}
-
-#sortSelect:hover {
-    transform: none;
-}
-
-
-    /* ---------- QUEUE ---------- */
-
-    #queueBox {
-        position: fixed;
-
-        top: auto;
-        right: 10px;
-        bottom: 10px;
-        left: 10px;
-
-        width: auto;
-        max-width: none;
-
-        max-height: 65vh;
-
-        padding: 10px;
-
-        border-radius: 14px;
-
-        overflow: hidden;
-    }
-
-    .queue-header {
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        font-size: 22px;
-
-        min-height: 45px;
-    }
-
-    .queue-buttons {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    #queueBox .queue-buttons button {
-        width: 100px;
-        height: 100px;
-
-        min-width: 42px;
-        min-height: 42px;
-
-        font-size: 14px;
-    }
-
-#queueBox .queue-buttons .clearqueue {
-    width: 65px;
-    height: 65px;
-
-    min-width: 65px;
-    min-height: 65px;
-
-    padding: 0;
-
-    border-radius: 50%;
-}
-    }
-
-    #queueList {
-        width: 100%;
-        max-height: 45vh;
-
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .queue-song {
-        width: 100%;
-        min-width: 0;
-
-        padding: 0 8px;
-
-        font-size: 15px;
-    }
-
-    .queue-song-name {
-        min-width: 0;
-        height: 42px;
-    }
-
-    .queue-remove {
-        flex-shrink: 0;
-
-        width: 35px;
-        height: 35px;
-
-        font-size: 22px;
-    }
-
-
-    /* ---------- COLLAPSED QUEUE ---------- */
-
-    #queueBox.collapsed {
-        top: auto;
-        right: 15px;
-        bottom: 15px;
-        left: auto;
-
-        width: 100px;
-        height: 100px;
-
-        min-width: 100px;
-        min-height: 100px;
-
-        padding: 0;
-
-        border-radius: 50%;
-    }
-
-    #queueBox.collapsed .queue-header {
-        width: 100%;
-        height: 100%;
-
-        min-height: 0;
-
-        margin: 0;
-        padding: 0;
-
-        justify-content: center;
-    }
-
-#queueBox.collapsed #queueToggle {
-    width: 65px;
-    height: 65px;
-
-    min-width: 65px;
-    min-height: 65px;
-
-    border-radius: 50%;
-}
-
-
-    /* ---------- SONG LIBRARY ---------- */
-
-    #songLibrary {
-        width: 100%;
-        max-width: 100%;
-
-        overflow-x: hidden;
-    }
-
-    .album-section {
-        width: 100%;
-        max-width: 100%;
-
-        margin-bottom: 20px;
-    }
-
-    .album-title {
-        width: calc(100% - 20px);
-
-        margin: 10px;
-
-        padding: 10px;
-
-        font-size: 20px;
-
-        border-width: 0 0 1px 0;
-    }
-
-
-    /* ---------- SONG GRID ---------- */
-
-    .song-grid {
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(
-                auto-fit,
-                minmax(
-                    min(100%, 160px),
-                    1fr
-                )
-            );
-
-        gap: 10px;
-
-        padding: 8px;
-    }
-
-
-    /* ---------- SONG CARD ---------- */
-
-    .song-card {
-        width: 100%;
-        min-width: 0;
-        min-height: 0;
-
-        padding: 8px;
-
-        border-radius: 10px;
-    }
-
-    .song-card img {
-        width: 100%;
-        height: auto;
-
-        aspect-ratio: 1 / 1;
-
-        object-fit: cover;
-    }
-
-    .song-card h3 {
-        margin: 8px 2px 4px;
-
-        font-size: clamp(15px, 4vw, 20px);
-
-        line-height: 1.2;
-    }
-
-    .song-card p {
-        margin: 0 2px 8px;
-
-        font-size: 12px;
-
-        line-height: 1.3;
-    }
-.button-row {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.song-card button {
-    width: 95%;
-    height: 65px;
-    min-height: 65px;
-
-    margin: 0 auto;
-
-    padding: 8px;
-
-    font-size: 16px;
-
-    border-radius: 14px;
-}
-
-.small-button-row {
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 0 auto;
-}
-
-.small-button-row button {
-    width: 50% !important;
-    height: 55px !important;
-    min-height: 55px !important;
-
-    margin: 0 !important;
-    padding: 5px !important;
-
-    font-size: 14px !important;
-}
-
-    /* ---------- SONG COUNTER ---------- */
-
-    #songCounter {
-        width: 100%;
-
-        padding: 10px;
-
-        font-size: 16px;
-
-        text-align: center;
-    }
-}
-
-
 
 </style>
 
@@ -1208,7 +639,7 @@ body {
     class="mobile-mode-bubble"
     aria-label="Toggle Mobile Mode"
 >
-    
+    Mobile
 </button>
 
 
