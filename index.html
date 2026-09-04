@@ -53,7 +53,8 @@
 }
 
      #ReijiKey {
-   position: fixed;
+          display:none;
+    position:fixed;
     top: 370px;
     left:4%;
     transform: translateX(-100px);
@@ -62,6 +63,7 @@
     }
     
 #AiKey {
+    display:none;
     position: fixed;
       top: 370px;
    right: 0%;
@@ -532,6 +534,7 @@
     }
 
     .album-title {
+        color:white;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -545,7 +548,7 @@
     }
 
     .album-title:hover {
-        color: #1a1a1a;
+        color: gray;
     }
 
     .collapse-arrow {
@@ -722,7 +725,7 @@
             <div class="now-info">
 
                 <div id="nowTitle">
-                    Nothing Playing
+                    
                       <span id="songName"></span>
     <span id="artistName"></span>
                 </div>
@@ -1279,14 +1282,6 @@ const songs = [
         album: "Utano☆Princesama TABOO NIGHT XXXX MEDLEY IDOL SONG",
         audio: "https://64.media.tumblr.com/b2f7b27978f5f18ce2c39afa15822470/25cccdc8066f8655-92/1493ca144eb06c64d8d207f8ab57685f5cfff479.mp3"
     },
-    {
-            title: "KIRAMEKIRA☆",
-        group: ["Quartet Night"],
-        artist: ["Reiji Kotobuki"],
-        art: "https://64.media.tumblr.com/abdb3bfb94043dfc6b0e10d3307740b5/25cccdc8066f8655-ee/s500x750/05b51e7391508a919ce12666d09788815be318a8.png",
-        album: "Utano☆Princesama TABOO NIGHT XXXX MEDLEY IDOL SONG",
-        audio: "https://64.media.tumblr.com/59721519982edbcfae38ec51e86b7775/b8d72442bb0d0279-67/1eb6348d80cc927a4a97d5dd3d37b3ecf4e69524.mp3"
-    },
         {
             title: "The RUN to the RAY",
         group: ["Quartet Night"],
@@ -1431,20 +1426,20 @@ const songs = [
         album: "Utano☆Princesama HE★VENS「Shinsengumi～Zanyo no yukusue～」",
         audio: "https://64.media.tumblr.com/018bb8855323fed8b94d4927e296b9ee/3eb2eeb27233961a-5b/37539bfcd9714af0f2fdadcdeb1b3a63b72597fc.mp3"
     },
-                   {
-                        title: "Drown In",
-        group: ["Quartet Night"],
-        artist: ["Reiji Kotobuki"],
-        art: "https://64.media.tumblr.com/069e471f5e2613de35a3a7cdab461d79/83119d69a3760918-75/s400x600/20fcad0ea0b8422b0d4930146f01198a8452920d.png",
-        album: "Uta No Prince Sama Solo Best Album",
-        audio: "https://64.media.tumblr.com/eb262ca0e806a6ceb067254a682f2b98/83119d69a3760918-cf/4c99d178f27474d78345e1d6042ea69cf2a885f9.mp3"
-    },
+
  {               title: "Drown In",
         group: ["Quartet Night"],
         artist: ["Reiji Kotobuki"],
         art: "https://64.media.tumblr.com/069e471f5e2613de35a3a7cdab461d79/83119d69a3760918-75/s400x600/20fcad0ea0b8422b0d4930146f01198a8452920d.png",
         album: "Uta No Prince Sama Solo Best Album",
         audio: "https://64.media.tumblr.com/eb262ca0e806a6ceb067254a682f2b98/83119d69a3760918-cf/4c99d178f27474d78345e1d6042ea69cf2a885f9.mp3"
+    },
+           {     title: "KIRAMEKIRA☆",
+        group: ["Quartet Night"],
+        artist: ["Reiji Kotobuki"],
+        art: "https://64.media.tumblr.com/069e471f5e2613de35a3a7cdab461d79/83119d69a3760918-75/s400x600/20fcad0ea0b8422b0d4930146f01198a8452920d.png",
+        album: "Uta No Prince Sama Solo Best Album",
+        audio: "https://64.media.tumblr.com/59721519982edbcfae38ec51e86b7775/b8d72442bb0d0279-67/1eb6348d80cc927a4a97d5dd3d37b3ecf4e69524.mp3"
     },
      {               title: "Frost Dream",
         group: ["Quartet Night"],
@@ -1911,11 +1906,260 @@ const songs = [
         album: "Utapri x Hypnosis Mic",
         audio: "https://64.media.tumblr.com/d3ffd13c25fe745f42f9d2b95d6f3005/998b565930271f4a-34/5ff741ee37e47954e3c7865f0733d9506b85c42b.mp3"
     },
-    
+        // =====================================================
+// Maji Love Starish Tours Cross Unit Idol Song 
+// =====================================================
+     {    title: "SAMURAIZM",
+        group: ["ST☆RISH"],
+        artist: ["Masato", "Tokiya Ichinose", "Cecil Aijima"],
+        art: "https://64.media.tumblr.com/fee68dc2d2787573ce512789eddb6489/10b8d4a7ac19e067-ae/s512x512u_c1/cfa9c2468e7061ec24d0df795b5c8873d40a3bba.jpg",
+        album: "Maji Love Starish Tours Cross Unit Idol Song ",
+        audio: "https://a.tumblr.com/tumblr_rh8uucOkKE1rdel5jo1.mp3"
+    },
+       {    title: "UUUU",
+        group: ["ST☆RISH"],
+        artist: ["Otoya Ittoki", "Natsuki", "Ren", "Syo"],
+        art: "https://64.media.tumblr.com/2712efe4c81f87453142a974a070e9a4/b8f1734f13bbd41f-c5/s512x512u_c1/8c39f459064507dd4415f02eb46724758fc793b6.JPG",
+        album: "Maji Love Starish Tours Cross Unit Idol Song ",
+        audio: "https://a.tumblr.com/tumblr_rh8uu89ouI1rdel5jo1.mp3"
+    },
+            // =====================================================
+// Maji Love Starish Tours Idol Song 
+// =====================================================
+           {    title: "Re:alive",
+        group: ["ST☆RISH"],
+        artist: ["Cecil Aijima"],
+        art: "https://64.media.tumblr.com/26aa339849b98018f142d611715c385e/73fb7c966b0d8597-65/s512x512u_c1/4de5c736529a4e9009fb85d20b58e77e8d326a2e.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rh8umhrTM41rdel5jo1.mp3"
+    },
+         {    title: "Toriddo Love",
+        group: ["ST☆RISH"],
+        artist: ["Cecil Aijima"],
+        art: "https://64.media.tumblr.com/26aa339849b98018f142d611715c385e/73fb7c966b0d8597-65/s512x512u_c1/4de5c736529a4e9009fb85d20b58e77e8d326a2e.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rh8umdFgIw1rdel5jo1.mp3"
+    },
+          {    title: "DREAM TALE",
+        group: ["ST☆RISH"],
+        artist: ["Jinguji Ren"],
+        art: "https://64.media.tumblr.com/b115edc150c1e6bb63fb2705984df955/634ed2c9df4d144a-14/s512x512u_c1/4dc7a16443b7de16403996a3c166944cfec10358.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rh8u3syMS31rdel5jo1.mp3"
+    },
+             {    title: "Ready to be a Lady",
+        group: ["ST☆RISH"],
+        artist: ["Jinguji Ren"],
+        art: "https://64.media.tumblr.com/b115edc150c1e6bb63fb2705984df955/634ed2c9df4d144a-14/s512x512u_c1/4dc7a16443b7de16403996a3c166944cfec10358.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rh8u3lyLP41rdel5jo1.mp3"
+    },            {    title: "Dizzy Glow",
+        group: ["ST☆RISH"],
+        artist: ["Syo Kurusu"],
+        art: "https://64.media.tumblr.com/300d6cfacbfe6d1643fe7a36ff5353c6/65192c6ad54539bc-85/s512x512u_c1/0519ba18ecfad3197b307e32adc63cfb3bb6c3c8.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rh63yiiDtt1wdtsquo1.mp3"
+    },
+               {    title: "Rai Rai ☆ All right",
+        group: ["ST☆RISH"],
+        artist: ["Syo Kurusu"],
+        art: "https://64.media.tumblr.com/300d6cfacbfe6d1643fe7a36ff5353c6/ed285e220b605b2b-4f/s512x512u_c1/3d0761d04f6a90ad4dda86da014f2399b45d7459.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rh63vpsHBG1wdtsquo1.mp3"
+    },
+                 {    title: "With Ding Dong",
+        group: ["ST☆RISH"],
+        artist: ["Shinomiya Natsuki"],
+        art: "https://64.media.tumblr.com/515e03945525adbcdc704b587749133f/de5ea21e4ec8336a-9a/s512x512u_c1/e99c9a6a5962f8ac9920240440c73f633d637d8a.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_re9tteYe671rdel5jo1.mp3"
+    },
+                  {    title: "Ai o Bon Appetit♪",
+        group: ["ST☆RISH"],
+        artist: ["Shinomiya Natsuki"],
+        art: "https://64.media.tumblr.com/515e03945525adbcdc704b587749133f/de5ea21e4ec8336a-9a/s512x512u_c1/e99c9a6a5962f8ac9920240440c73f633d637d8a.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_re9tr4MZzO1rdel5jo1.mp3"
+    },
+                 {    title: "PERFECT STORY",
+        group: ["ST☆RISH"],
+        artist: ["Ichinose Tokiya"],
+        art: "https://64.media.tumblr.com/c8a7b9063c5e9fc1687c7a1a93e00d36/5a4c66b8e39aae0e-27/s512x512u_c1/8c3ec1ab9566b7e92e8c7c415e319f2875da4968.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_re9txvRIEq1rdel5jo1.mp3"
+    },
+                {    title: "TRIGGER CHANCE",
+        group: ["ST☆RISH"],
+        artist: ["Ichinose Tokiya"],
+        art: "https://64.media.tumblr.com/c8a7b9063c5e9fc1687c7a1a93e00d36/5a4c66b8e39aae0e-27/s512x512u_c1/8c3ec1ab9566b7e92e8c7c415e319f2875da4968.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_re9twbBd2C1rdel5jo1.mp3"
+    },
+                    {    title: "Stay with...",
+        group: ["ST☆RISH"],
+        artist: ["Masato Hijirikawa"],
+        art: "https://64.media.tumblr.com/2d993de1fb34b8eae6a4de329691c6b8/dca521198b533278-13/s512x512u_c1/7bfa8749f77002f13090be98ab433b9848c6b7f6.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_re9tlzRIVn1rdel5jo1.mp3"
+    },
+                    {    title: "Snow BALLADE",
+        group: ["ST☆RISH"],
+        artist: ["Masato Hijirikawa"],
+        art: "https://64.media.tumblr.com/2d993de1fb34b8eae6a4de329691c6b8/dca521198b533278-13/s512x512u_c1/7bfa8749f77002f13090be98ab433b9848c6b7f6.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_re9tj5bgwI1rdel5jo1.mp3"
+    },               {    title: "POP SHOWER",
+        group: ["ST☆RISH"],
+        artist: ["Ittoki Otoya"],
+        art: "https://64.media.tumblr.com/795185415faf3cf5e765fe1331a008c0/183e6bfaec96c849-e0/s512x512u_c1/81f2a36908f3dee90d52ec101bd45aa79ce1d07f.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rc7osmaaKq1rdel5jo1.mp3"
+    },
+              {    title: "Ok, Hello World!",
+        group: ["ST☆RISH"],
+        artist: ["Ittoki Otoya"],
+        art: "https://64.media.tumblr.com/795185415faf3cf5e765fe1331a008c0/183e6bfaec96c849-e0/s512x512u_c1/81f2a36908f3dee90d52ec101bd45aa79ce1d07f.jpg",
+        album: "Maji Love Starish Tours Idol Song",
+        audio: "https://a.tumblr.com/tumblr_rc7osaee771rdel5jo1.mp3"
+    },
+// =====================================================
+//Uta no Prince-sama♪ Maji LOVE Starish Tours
+// =====================================================
+
+     {    title: "ST☆RT OURS",
+        group: ["ST☆RISH"],
+        artist: ["Otoya Ittoki", "Masato Hijirikawa", "Natsuki Shinomiya", "Tokiya Ichinose", "Ren Jinguji", "Syo Kurusu", "Cecil Aijima"],
+        art: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfxnk25t1j5lWMBokqnFkCz6H9Q4zUDlDsJmHEyJddA&s=10",
+        album: "Uta no Prince-sama♪ Maji LOVE Starish Tours",
+        audio: "https://a.tumblr.com/tumblr_ra1jwt0uyY1rdel5jo1.mp3"
+     },
+          {    title: "Maji LOVE ST☆RISH Tours",
+        group: ["ST☆RISH"],
+        artist: ["Otoya Ittoki", "Masato Hijirikawa", "Natsuki Shinomiya", "Tokiya Ichinose", "Ren Jinguji", "Syo Kurusu", "Cecil Aijima"],
+        art: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfxnk25t1j5lWMBokqnFkCz6H9Q4zUDlDsJmHEyJddA&s=10",
+        album: "Uta no Prince-sama♪ Maji LOVE Starish Tours",
+        audio: "https://a.tumblr.com/tumblr_ra1jt7D7Sg1rdel5jo1.mp3"
+     },
+     // =====================================================
+// idols song cd
+// =====================================================
+ {    title: "ALL MY MISSION",
+        group: ["Quartet Night"],
+        artist: ["Camus"],
+        art: "https://64.media.tumblr.com/01d1587eb880687935409b8b1a079bf8/89c5501b86391776-d1/s512x512u_c1/6689c5595ea70dc9ad4e6e1507b8ce797c1cb659.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7y1e788k81s69klbo1.mp3"
+     },
+      {    title: "Steward Dance",
+        group: ["Quartet Night"],
+        artist: ["Camus"],
+        art: "https://64.media.tumblr.com/2d6a106bd35ed741d21df9a1069989ae/f1c47ae08fafc379-a0/s512x512u_c1/4aaf4461f5ffd3839dcb5857be82ddb878344714.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7y0z12Ruf1s69klbo1.mp3"
+     },
+          {    title: "Dream Maker",
+        group: ["Quartet Night"],
+        artist: ["Ai Mikaze"],
+        art: "https://64.media.tumblr.com/d2a60da492dd02f91c3f36cd0ccd2e16/da260bc67534b064-95/s512x512u_c1/65a06aa7fccf84b9ba6608b43be83000a208b8f8.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7u2scR7aY1s69klbo1.mp3"
+     },
+          {    title: "ラヴ・エボル",
+        group: ["Quartet Night"],
+        artist: ["Ai Mikaze"],
+        art: "https://64.media.tumblr.com/35f648b3ddc48f1a56573767cce1cc29/d0a206b462f260ac-25/s512x512u_c1/6d8719d64548e9c8768432a99df37b5d8ff77f20.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7u2l0U1E11s69klbo1.mp3"
+     },          {    title: "I LOVE & NEED YOU",
+        group: ["Quartet Night"],
+        artist: ["Ranmaru Kurosaki"],
+        art: "https://64.media.tumblr.com/29a225ed4fee6683040de9ca415e7d7d/ad10f7ca2300c71e-e5/s512x512u_c1/b476446d0df162e009c023988e27e09d0ca0f8b4.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7u2fj3Twu1s69klbo1.mp3"
+     },
+             {    title: "Clap Hands",
+        group: ["Quartet Night"],
+        artist: ["Ranmaru Kurosaki"],
+        art: "https://64.media.tumblr.com/e28025b8ccad1e8ddedf987b6d1306a4/0200ac6114f0e89d-5f/s512x512u_c1/a22250ec13251b1080265ac7f95ab5d4744372ce.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7q9vrEe6z1s69klbo1.mp3"
+     },
+                {    title: "Timepiece",
+        group: ["Quartet Night "],
+        artist: ["Reiji Kotobuki"],
+        art: "https://64.media.tumblr.com/0b90f06c871ee39c9f90fcfc81b3a06a/6058738ac717ecc6-ec/s512x512u_c1/876cf10fcc5537933e802abd336beeb08b9239e8.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7q9sfnOAs1s69klbo1.mp3"
+     },
+      {    title: "Alright All NIGHT",
+        group: ["Quartet Night "],
+        artist: ["Ranmaru Kurosaki"],
+        art: "https://64.media.tumblr.com/564f5aaebe880892b2161211c2a60a02/f39f6a38ec2cede9-eb/s512x512u_c1/6b49c8826a88b591ab8f1ad6b1732b31226a7008.jpg",
+        album: "Idol Song CD",
+        audio: "https://a.tumblr.com/tumblr_r7q9ojZtXp1s69klbo1.mp3"
+     },
+     // =====================================================
+// Nintendo Switch Special Campaign CD 
+// =====================================================
+     
+          {    title: "UP TO THE LIMIT",
+        group: ["Quartet Night"],
+        artist: ["Ai Mikaze", "Reiji Kotobuki","Ranmaru Kurosaki","Camus"],
+        art: "https://64.media.tumblr.com/c601c11eca90da577bea41907c0e262f/cd53982a871d51a8-07/s512x512u_c1/73bb29f91af62258e343dcdfb5a262f8d9f81e8d.png",
+        album: "Nintendo Switch Special Campaign CD",
+        audio: "https://a.tumblr.com/tumblr_r7py36eENK1s69klbo1.mp3"
+     },
+          {    title: "RAIN OR SHINE",
+        group: ["ST☆RISH "],
+        artist: ["Otoya Ittoki", "Masato Hijirikawa", "Natsuki Shinomiya", "Tokiya Ichinose", "Ren Jinguji", "Syo Kurusu", "Cecil Aijima"],
+        art: "https://64.media.tumblr.com/c601c11eca90da577bea41907c0e262f/696325f897916a56-02/s512x512u_c1/c360216b7c9aad24c80437bd33ab6ec52ec6f933.png",
+        album: "Nintendo Switch Special Campaign CD",
+        audio: "https://a.tumblr.com/tumblr_r7pxzr2Idx1s69klbo1.mp3"
+     },
+     // =====================================================
+// Shining All Star CD 3
+// =====================================================
+{    title: "RAIN OR SHINE",
+        group: ["Quartet Night"],
+        artist: ["Ai Mikaze", "Reiji Kotobuki","Ranmaru Kurosaki","Camus"],
+        art: "https://64.media.tumblr.com/2be95eeff207bed4f719e061288b3993/0d353462608dae96-ab/s512x512u_c1/ba7f53e604e2bfba68c5fc0276ee006ba575e8bc.jpg",
+        album: "Shining All Star CD 3",
+        audio: "https://a.tumblr.com/tumblr_qydl09o48a1rdel5jo1.mp3"
+},
+
+               {    title: "Grateful friends, Graceful ways",
+        group: ["ST☆RISH"],
+        artist: ["Otoya Ittoki", "Masato Hijirikawa", "Natsuki Shinomiya", "Tokiya Ichinose", "Ren Jinguji", "Syo Kurusu", "Cecil Aijima"],
+        art: "https://64.media.tumblr.com/2be95eeff207bed4f719e061288b3993/0d353462608dae96-ab/s512x512u_c1/ba7f53e604e2bfba68c5fc0276ee006ba575e8bc.jpg",
+        album: "Shining All Star CD 3",
+        audio: "https://a.tumblr.com/tumblr_qydkvvMXHP1rdel5jo1.mp3"
+     },
+     
+     // =====================================================
+// Uta no Prince-sama 10th Anniversary CD
+// =====================================================
+            {    title: "ENDLESS SCORE",
+        group: ["HE★VENS"],
+        artist: ["Eiichi Ootori", "Kira Sumeragi", "Nagi Mikado", "Eiji Ootori", "Van Kiryuin", "Yamato Hyuga", "Shion Amakusa"],
+        art: "https://64.media.tumblr.com/06ac7dd4a708edc828b922fb83dc67ce/79ea64dc5559be57-d4/s512x512u_c1/aeaabe356237c01676944570e7c820203c814f05.jpg",
+        album: "Shining All Star CD 3",
+        audio: "https://a.tumblr.com/tumblr_qu1o39mcOe1rdel5jo1.mp3"
+     },
+     {    title: "QUARTET CROWN",
+        group: ["Quartet Night"],
+        artist: ["Ai Mikaze", "Reiji Kotobuki","Ranmaru Kurosaki","Camus"],
+        art: "https://64.media.tumblr.com/4c1f4c9f78879528415b97f11f9a71ef/168bd000ff16cb93-9d/s512x512u_c1/51950a74e4cf08cfba9822af2947ddd49e130c03.jpg",
+        album: "Shining All Star CD 3",
+        audio: "https://a.tumblr.com/tumblr_qu1o35qSsi1rdel5jo1.mp3"
+},
+         {    title: "STAR WISH",
+        group: ["ST☆RISH"],
+        artist: ["Otoya Ittoki", "Masato Hijirikawa", "Natsuki Shinomiya", "Tokiya Ichinose", "Ren Jinguji", "Syo Kurusu", "Cecil Aijima"],
+        art: "https://64.media.tumblr.com/9320078071c3b96083481eb50b5a2309/067d83fb612769a4-7b/s512x512u_c1/6b5dde99a8ead085c9ff244feae3141f60c5ade1.jpg",
+        album: "Shining All Star CD 3",
+        audio: "https://a.tumblr.com/tumblr_qu1o2vdHBW1rdel5jo1.mp3"
+     },
 ];
-
-
-
 // =====================================================
 // PLAYER VARIABLES
 // =====================================================
