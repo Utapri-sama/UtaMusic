@@ -32,8 +32,8 @@
     ========================= */  
         #Reiji {
    position: fixed;
-    top: -15px;
-    Right: 75%;
+    top: -2.5%;
+    Right: 80%;
     transform: translateX(-100px);
        transform: scale(0.4);
         z-index:999;
@@ -41,8 +41,8 @@
     
 #Ai {
     position: fixed;
-    top: -10px;
-    left: 75%;
+  top: -2.2%;
+    left: 80%;
     transform: translateX(-100px);
       transform: scale(0.4);
         z-index:999;
@@ -144,7 +144,7 @@
 #queueBox {
     position: fixed;
     right: 20px;
-    top: 520px;
+    top: 20.5%;
     width: 750px;
     z-index: 9999;
   background-color:black;
@@ -316,7 +316,7 @@
 #queueBox.collapsed {
      position: fixed;
     right: 20px;
-    top: 600px;
+      top: 420px;
     width: 200px;
     height: 200px;
     right: 20px;
@@ -441,9 +441,9 @@
     ========================= */
 
     .library-controls {
-    position: absolute;
+    position: fixed;
     left: 20px;
-    top: 180px;
+    top: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -621,6 +621,612 @@
 @media (min-width: 769px) {
     body {
         zoom: 55%;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE LAYOUT
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 769px) {
+
+    #nowPlaying {
+        min-height: 200px;
+    }
+
+    #nowArt {
+        width: 200px;
+        height: 200px;
+        transform: translateX(0);
+    }
+
+    .now-info {
+        min-width: 0;
+    }
+
+    #nowTitle {
+        font-size: clamp(24px, 3vw, 40px);
+    }
+
+    .controls {
+        gap: 15px;
+    }
+
+    .player-button {
+        width: 90px;
+        height: 90px;
+        font-size: 30px;
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(260px, 1fr)
+        );
+    }
+
+    .song-card {
+        width: 300px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    /* ---------- TOP PLAYER ---------- */
+
+    .top-player {
+        min-height: 0;
+    }
+
+    .sticky-player {
+        position: relative;
+        width: 100%;
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    #nowPlaying {
+        width: 100%;
+        min-height: 0;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        overflow: hidden;
+    }
+
+    /* Album art */
+
+    #nowArt {
+        width: min(55vw, 220px);
+        height: min(55vw, 220px);
+
+        max-width: 220px;
+        max-height: 220px;
+
+        transform: none;
+        margin: 0 auto;
+
+        object-fit: cover;
+    }
+
+    /* Border image */
+
+    #Border {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Now playing information */
+
+    .now-info {
+        width: 100%;
+        min-width: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    #nowTitle {
+        width: 100%;
+
+        font-size: clamp(20px, 6vw, 32px);
+        line-height: 1.15;
+
+        text-align: center;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        margin: 0;
+    }
+
+    #progressBar {
+        width: 90%;
+        max-width: 500px;
+    }
+
+
+    /* ---------- CHARACTERS ---------- */
+
+    #Reiji,
+    #Ai {
+        position: absolute;
+
+        top: auto;
+        bottom: 0;
+
+        width: 120px;
+        height: auto;
+
+        transform: scale(1);
+
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    #Reiji {
+        left: -20px;
+        right: auto;
+    }
+
+    #Ai {
+        right: -20px;
+        left: auto;
+    }
+
+
+    /* ---------- BANNER ---------- */
+
+    #banner {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+        height: 100px;
+
+        background-size: auto 100px;
+        background-position: center;
+        pointer-events: none;
+    }
+
+
+    /* ---------- PLAYER CONTROLS ---------- */
+
+    .controls {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        align-items: center;
+        justify-items: center;
+
+        gap: 5px;
+
+        padding: 10px 8px;
+
+        overflow: hidden;
+    }
+
+    .player-button {
+        width: min(17vw, 65px);
+        height: min(17vw, 65px);
+
+        min-width: 0;
+        min-height: 0;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-size: clamp(18px, 6vw, 30px);
+
+        border-radius: 50%;
+    }
+
+    .player-button:hover {
+        transform: none;
+    }
+
+
+    /* ---------- SORT ---------- */
+
+    .library-controls {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 8px;
+
+        padding: 10px;
+        margin: 0;
+
+        transform: none;
+
+        grid-column: 1 / -1;
+
+        order: 10;
+    }
+
+    .library-controls label {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    #sortSelect {
+        width: auto;
+        max-width: 55vw;
+
+        padding: 10px 16px;
+
+        font-size: 15px;
+    }
+
+    #sortSelect:hover {
+        transform: none;
+    }
+
+
+    /* ---------- QUEUE ---------- */
+
+    #queueBox {
+        position: fixed;
+
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+
+        width: auto;
+        max-width: none;
+
+        max-height: 65vh;
+
+        padding: 10px;
+
+        border-radius: 14px;
+
+        overflow: hidden;
+    }
+
+    .queue-header {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 22px;
+
+        min-height: 45px;
+    }
+
+    .queue-buttons {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    #queueBox .queue-buttons button {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+        min-height: 42px;
+
+        font-size: 14px;
+    }
+
+    #queueBox .queue-buttons .clearqueue {
+        width: auto;
+        min-width: 55px;
+
+        padding: 0 10px;
+
+        border-radius: 20px;
+    }
+
+    #queueList {
+        width: 100%;
+        max-height: 45vh;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .queue-song {
+        width: 100%;
+        min-width: 0;
+
+        padding: 0 8px;
+
+        font-size: 15px;
+    }
+
+    .queue-song-name {
+        min-width: 0;
+        height: 42px;
+    }
+
+    .queue-remove {
+        flex-shrink: 0;
+
+        width: 35px;
+        height: 35px;
+
+        font-size: 22px;
+    }
+
+
+    /* ---------- COLLAPSED QUEUE ---------- */
+
+    #queueBox.collapsed {
+        top: auto;
+        right: 15px;
+        bottom: 15px;
+        left: auto;
+
+        width: 65px;
+        height: 65px;
+
+        min-width: 65px;
+        min-height: 65px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+    #queueBox.collapsed .queue-header {
+        width: 100%;
+        height: 100%;
+
+        min-height: 0;
+
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    #queueBox.collapsed #queueToggle {
+        width: 65px;
+        height: 65px;
+
+        min-width: 65px;
+        min-height: 65px;
+
+        border-radius: 50%;
+    }
+
+
+    /* ---------- SONG LIBRARY ---------- */
+
+    #songLibrary {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    .album-section {
+        width: 100%;
+        max-width: 100%;
+
+        margin-bottom: 20px;
+    }
+
+    .album-title {
+        width: calc(100% - 20px);
+
+        margin: 10px;
+
+        padding: 10px;
+
+        font-size: 20px;
+
+        border-width: 0 0 1px 0;
+    }
+
+
+    /* ---------- SONG GRID ---------- */
+
+    .song-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(
+                    min(100%, 160px),
+                    1fr
+                )
+            );
+
+        gap: 10px;
+
+        padding: 8px;
+    }
+
+
+    /* ---------- SONG CARD ---------- */
+
+    .song-card {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+
+        padding: 8px;
+
+        border-radius: 10px;
+    }
+
+    .song-card img {
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 1 / 1;
+
+        object-fit: cover;
+    }
+
+    .song-card h3 {
+        margin: 8px 2px 4px;
+
+        font-size: clamp(15px, 4vw, 20px);
+
+        line-height: 1.2;
+    }
+
+    .song-card p {
+        margin: 0 2px 8px;
+
+        font-size: 12px;
+
+        line-height: 1.3;
+    }
+
+    .button-row {
+        gap: 5px;
+    }
+
+    .song-card button {
+        width: 100%;
+        height: 40px;
+
+        min-height: 40px;
+
+        padding: 6px;
+
+        font-size: 14px;
+
+        border-radius: 12px;
+    }
+
+    .song-card button:hover {
+        transform: none;
+    }
+
+    .small-button-row {
+        gap: 5px;
+    }
+
+    .small-button-row button {
+        width: 50% !important;
+        height: 36px !important;
+        min-height: 36px !important;
+
+        padding: 5px !important;
+
+        font-size: 12px !important;
+    }
+
+
+    /* ---------- SONG COUNTER ---------- */
+
+    #songCounter {
+        width: 100%;
+
+        padding: 10px;
+
+        font-size: 16px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    #nowArt {
+        width: 180px;
+        height: 180px;
+    }
+
+    .controls {
+        gap: 2px;
+        padding: 8px 4px;
+    }
+
+    .player-button {
+        width: 54px;
+        height: 54px;
+        font-size: 20px;
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        padding: 6px;
+    }
+
+    .song-card {
+        padding: 6px;
+    }
+
+    .song-card h3 {
+        font-size: 14px;
+    }
+
+    .song-card p {
+        font-size: 11px;
+    }
+
+    .song-card button {
+        height: 36px;
+        min-height: 36px;
+        font-size: 12px;
     }
 }
 
